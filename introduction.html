@@ -2,84 +2,243 @@
 layout: default
 title: Introduction to CSS
 ---
+<div class="col-md-3">
+    <div class="lesson-nav" data-spy="affix" data-offset-top="0">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="#selectors">1-1 - Selectors</a></li>
+            <li><a href="#pseudo">1-2 - Pseudo Selectors</a></li>
+            <li><a href="#specificity">1-3 - Specificity</a></li>
+        </ul>
+    </div>
+</div>
 
-<h1>Introduction to CSS</h1>
+<div class="col-md-9">
+    <h1>Introduction to Cascading Style Sheets</h1>
 
-<hr />
+    <h3>What is CSS?</h3>
 
-<div id="selectors">
-	<h3>Lesson 1-1: Selectors</h3>
+    <p>CSS is a style sheet language used for describing the presentation semantics (the look and formatting) of a document written in markup language.  It's most common application is to style web pages written in HTML and XHTML, but the language can also be applied to any kind of XML document, including plain XML, SVG, and XUL.</p>
 
-	<p>CSS selectors can range from the incredibly simple to the overly complex.</p> 
+    <hr />
 
-	<br />
+    <h3>Why use CSS?</h3>
 
-	<p><strong>First, let's take a look at some plain HTML</strong></p>
+    <p>CSS was developed back in 1996 to provide a separation of concerns from information content &amp; details of how to display it.</p>
 
-	{% highlight html %}
-  <!DOCTYPE html>
-  <html>
+    <p>There are no real alternatives to CSS, but there are many tools which have found ways to improve on certain aspects of the CSS coding practices.  The end result will always be produced as plain old CSS, but <em>languages</em> like <a href="http://lesscss.org">LESS CSS</a> can let you be more productive when writing your code.</p>
+
+    <hr />
+
+    <h3>How to use CSS</h3>
+
+    <p>There are three specific ways to add CSS to the elements of your document.</p>
+
+    <br />
+
+    <h4>Method 1: Use an External Stylesheet</h4>
+
+    <p>This method involves adding a reference to an external document with the <code>.css</code> extension in the <code>&lt;head&gt;</code> of your document using the <code>&lt;link&gt;</code> tag.</p>
+
+    <strong>Example:</strong>
+
+    {% highlight html %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>CSS Lunch and Learn</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
     <body>
-      <div>
-        <h1>My First Heading</h1>
-        <p>My first paragraph.</p>
-        <a href="#">My first Link</a>
-      </div>
+        <p>Hello World!</p>
     </body>
-  </html>
-	{% endhighlight %}
+    </html>
+    {% endhighlight %}
 
-	<iframe src="/lessons/1-1/default-html.html"></iframe>
+    <div id="selectors" class="lesson">
+    	<h3 class="title">1-1: Selectors</h3>
 
-	<p><a target="_blank" href="/lessons/1-1/default-html.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+    	<p><strong>First, let's take a look at some plain HTML</strong></p>
 
-	<br />
-	<hr />
+    	{% highlight html %}
+      <!DOCTYPE html>
+      <html>
+        <body>
+          <div>
+            <h1>My First Heading</h1>
+            <p>My first paragraph.</p>
+            <a href="#">My first Link</a>
+          </div>
+        </body>
+      </html>
+    	{% endhighlight %}
 
-	<strong>Now lets style our example HTML with some basic CSS selectors:</strong>
+        <strong>The Result:</strong>
 
-	{% highlight css %}
-    div {
-    	padding:5px;
-    	border:5px solid #09f;
-    	background-color:#eee;
-    }
-    h1 {
-    	margin-bottom:15px;
-    	font-family:Arial;
-    	font-size:24px;
-    	text-decoration:underline;
-    	font-variant:small-caps;
-    }
-    p {
-    	font-family:Arial;
-    	font-size:14px;
-    	margin-bottom:10px;
-    }
-    a {
-    	font-family:Arial;
-    	color:#09f;
-    	text-decoration: none;
-    }
-	{% endhighlight %}
+    	<iframe src="/lessons/intro/default-html.html"></iframe>
 
-	<iframe src="/lessons/1-1/default-html-styled.html"></iframe>
-	<p><a target="_blank" href="/lessons/1-1/default-html-styled.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+    	<p><a target="_blank" href="/lessons/intro/default-html.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
 
-	<br />
-	<hr />
+    	<br />
+    	<hr />
 
-	<strong>Next we have some more advanced selectors:</strong>
+    	<strong>Now lets style our example HTML with some basic CSS selectors:</strong>
 
-	{% highlight css %}
-    a.outbound[href^="http"] {
-    	background-image:url(../img/some_image.png);
-    	baclkground-position:0px 0px;
-    	background-repeat:no-repeat;
-    }
+    	{% highlight css %}
+        body {
+            font-family:Arial;
+        }
+        div {
+        	padding:5px;
+        	box-shadow:0px 0px 5px 0px #000;
+        	background-color:#eee;
+        }
+        h1, p, a {
+            font-family:Arial;
+        }
+        h1 {
+        	margin-bottom:15px;
+        	font-size:24px;
+        	text-decoration:underline;
+        	font-variant:small-caps;
+        }
+        p {
+        	font-size:14px;
+        	margin-bottom:10px;
+        }
+        a {
+        	color:#09f;
+        	text-decoration: none;
+        }
+    	{% endhighlight %}
 
-    ul.nav > li a[data-*="foo"] {
-    	font-weight:bold;
-    }
-	{% endhighlight %}
+    	<iframe src="/lessons/intro/default-html-styled.html"></iframe>
+    	<p><a target="_blank" href="/lessons/intro/default-html-styled.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+    	
+        <br />
+
+        <p>We used the most basic of selectors, the element selector, to select the parts of the page we wanted to style, and then applied some styling declarations to those selectors to create a desired result. Altough this works well for styling elements, we would quickly run out of presentation options, and our designs would be pretty plain.</p>
+
+        <br />
+
+        <h4 class="title">Classes &amp; IDs to the rescue</h4>
+        <p>CSS allows you to specify your own semantic selectors with the Class &amp; ID system.</p>
+
+        <strong>HTML with Classes &amp; IDs added:</strong>
+        {% highlight html %}
+      <!DOCTYPE html>
+      <html>
+        <body>
+          <div id="wrapper">
+            <h1 class="title">My First Heading</h1>
+            <p class="headline">My first paragraph.</p>
+            <a class="affiliate" href="#">My first Link</a>
+          </div>
+        </body>
+      </html>
+        {% endhighlight %}
+    </div>
+
+    <div id="pseudo" class="lesson">
+        <br />
+        <h3 class="title">1-2: Pseudo Class Selectors</h3>
+
+        <p>A pseudo class is a keyword added to selectors that specifies a special state of the element to be selected.</p>
+
+        <strong>Common Pseudo Selectors:</strong>
+        
+        <ol>
+            <li>:hover</li>
+            <li>:visited</li>
+            <li>:before</li>
+            <li>:after</li>
+        </ol>
+
+        <p>All pseudo selectors will be preceded by a colon, and the selector they are targeting.</p>
+
+        {% highlight css %}
+        a:hover {
+            text-decoration:underline;
+        }
+        .nav-item:visted {
+            color:#37f;
+        }
+        {% endhighlight %}
+    </div>
+
+    <div id="specificity" class="lesson">
+        <br />
+        <h3 class="title">1-3: Specificity</h3>
+        
+        <p><strong>Specificity</strong> is the means by which a browser decides which property values are the most relevant to an element and gets to be applied.  Specificity is only based on the matching rules which are composed of selectors of different sorts.</p>
+        
+        <p>In case of specificity equality, the latest declaration found in the CSS is applied to the element. &nbsp; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank"><i class="glyphicon glyphicon-send"></i></a></p>
+
+        <hr />
+
+        <p>Visual Studio's <a href="#">Web Developer Tools</a> comes with a handy specificity plug-in, which will visualize your selectors specificity when you hover over it.</p>
+
+        <h1 style="color:red">#EXAMPLE HERE#</h1>
+        
+        <br />
+        <h4 class="sub-title">!important</h4>
+
+        <p>Related to specificity is the <code>!important</code> declaration.  <code>!important</code> is used after you make a CSS declaration, before the line ending semi-colon.</p>
+
+        {% highlight css %}
+        p {
+            color: #000 !important;
+        }
+        {% endhighlight %}
+
+        <p>The only way to override an <code>!important</code> declaration, is to declare another <code>!important</code> specification later in the CSS.  As CSS cascades, the last declaration with matching specificity will be applied.</p>
+
+        {% highlight css %}
+        p {
+            color: #000 !important;
+        }
+        a:hover {
+            text-decoration:underline;
+        }
+        p {
+            color:#06f !important;
+        }
+        {% endhighlight %}
+
+        <div class="well">
+            <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;<code>!important</code> is your best friend and worst enemy!  Chances are that if you are using it, you are doing something wrong.  It is an edge-case property that should be saved for times when there is literally no other options available.</small>
+        </div>
+
+        <h4 class="sub-title">Overriding inline styles</h4>
+
+        <p>One of the few times <code>!important</code> is used well, is when you need to override an inline style applied to an element dynamically, and you do not have access to the source code, or cannot change the source-code for a certain display option.</p>
+
+        {% highlight html %}
+        <div id="newsletterSignup" style="display:block; position:absolute; top:20px; left:200px;">
+            <input type="text" name="email">
+            <a href="somepage.html" title="Sign up now!">Sign up now!</a>
+        </div>
+        {% endhighlight %}
+
+        <p>Assume that the above div is coming in from a third-party plug-in, and is getting some inline styles added to it that are throwing it out aof alignment, and cutting off the content.  Just targeting the CSS ID <code>#newsletterSignup</code> would not work, even though an ID has the highest specificity, and it is the correlating name of the element.</p>
+        
+        {%highlight css%}
+        #newsletterSignup {
+            left:100px !important;
+        }
+        {%endhighlight%}
+
+        <p>This would not work to override an inline style.  To be clear, you would be seeing your desired result, but you would be targeting the element as a whole, and applying that positioning to that element, rather than simply overriding inline styles, and preventing further conflicts.</p>
+
+        {%highlight css%}
+        #newsletterSignup[style] {
+            left:100px !important;
+        }
+        {%endhighlight%}
+
+        <p>Now you are targeting the inline styles attached to that ID.  However, you still need to use <code>!important</code> to effectively override the applied inline CSS styles, and get the div to render as desired.  Because inline styles have the highest possible specificity, <code>!important</code> is your only saving grace in these matters.</p>
+
+        <div class="well">
+            <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;The <code>[style]</code> selector is a great tool to have in any designers belt.  However, as you would suspect, IE7 does not support it.  In these cases, one best practice would be to use a Conditional Comment and target the fix per browser.</small>
+        </div>
+    </div>
 </div>

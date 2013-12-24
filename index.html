@@ -2,13 +2,6 @@
 layout: default
 title: CSS Lunch and Learn
 ---
-
-<div class="row">
-  <div class="jumbotron">
-    <h1>Welcome</h1>
-    <p>To the CSS Lunch and Learn.  The Leggos of the web!</p>
-  </div>
-</div>
 <div class="row">
   <div class="col-md-4 col-lg-4">
     <div class="well">
@@ -20,42 +13,22 @@ title: CSS Lunch and Learn
   <div class="col-md-4 col-lg-4">
     <div class="well">
       <h4>Display &amp; Position</h4>
-      <p>Learn the differences between each of the most used <em>display</em> options, and how to <em>position</em> them appropriately</p>
-      <a href="#" class="btn btn-primary">inline, inline everywhere</a>
+      <p>Learn the differences between each of the most used <em>display</em> options, and how to <em>position</em> them appropriately on a web page.</p>
+      <a href="dis-pos.html" class="btn btn-primary">Go to lesson</a>
     </div>
   </div>
   <div class="col-md-4 col-lg-4">
     <div class="well">
-      <h4>Float &amp; Clear</h4>
+      <h4>Clear &amp; Float</h4>
       <p><em>Clear's</em> &amp; <em>floats</em> are some of the most powerful CSS declarations you can use.  They are also some of the most confusing to use correct.</p>
-      <a href="#" class="btn btn-primary">Clearfix what?</a>
+      <a href="clear-float.html" class="btn btn-primary">Go to lesson</a>
     </div>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-12">
     <div class="well">
-      <h4>z-index and you</h4>
-      <p>It's just like using layers in Photoshop, only not really</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="well">
-      <h4>Internet Explorer</h4>
-      <p>Everyones favorite browser has some very specific bugs that make your life more difficult. Or in the words of an MSFT fanboy, IE keeps you honest.</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="well">
-      <h4>CSS3</h4>
-      <p>Finally the fun stuff!  I want spinny AJAX loaders and recreated NES controllers made entirely out of CSS, please.</p>
+      <h4><a href="nav-example.html">Building a Nav Bar</a></h4>
     </div>
   </div>
 </div>
-
-<h1>Blog Posts</h1>
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
