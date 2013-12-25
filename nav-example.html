@@ -1,0 +1,59 @@
+---
+layout: default
+title: Building a Navigation Bar
+---
+<h1>Navigation from Scratch</h1>
+
+<p>We will start with a vanilla HTML document structure</p>
+
+	{% highlight html linenos %}
+    <!DOCTYPE html>
+    <html>
+        <head>
+    	    <title>Navigation Example</title>
+        </head>
+        <body>
+	        
+        </body>
+    </html>
+    {% endhighlight %}
+
+ <p>Then add in the necessary elements to build our navigation off of.</p>
+
+    {% highlight html linenos %}
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Navigation Example</title>
+      </head>
+      <body>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </body>
+    </html>
+    {% endhighlight %}
+
+    <strong>The Result:</strong>
+
+    <iframe src="/lessons/navbar/1-1.html"></iframe>
+    <p><a target="_blank" href="/lessons/navbar/1-1.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+    <br />
+
+    <div class="well">
+      <p><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;We have decided to be HTML5 compliant with the inclusion of the <code>&lt;nav&gt;</code> tag.</p>
+    </div>

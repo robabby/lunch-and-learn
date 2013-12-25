@@ -1,0 +1,22 @@
+- Specificity - 0, 0, 0 - ID, Class, Element
+
+- The '!important' declaration:
+	- If you are using it, you are probably doing something wrong
+	- When specificity is out of your control, may have to use !important
+
+- The div[style] attribute:
+	- How to override inline styles with external CSS
+
+- IE only declarations:
+	_ IE6
+	* IE7
+	\9 IE8
+
+- Conditional comments: <html class="ie7">
+
+- Find the Visual studio plugin that has specificity
+
+## Useful Links
+
+- http://lea.verou.me/2013/12/css-is-for-developers/
+- http://rupl.github.io/unfold/
