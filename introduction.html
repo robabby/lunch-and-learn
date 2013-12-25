@@ -41,12 +41,12 @@ title: Introduction to CSS
 
     <strong>Example:</strong>
 
-    {% highlight html %}
+    {% highlight html linenos %}
     <!DOCTYPE html>
     <html>
     <head>
         <title>CSS Lunch and Learn</title>
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
         <p>Hello World!</p>
@@ -57,16 +57,16 @@ title: Introduction to CSS
     <div id="selectors" class="lesson">
     	<h3 class="title">1-1: Selectors</h3>
 
-    	<p><strong>First, let's take a look at some plain HTML</strong></p>
+    	<p><strong>Start with some plain HTML</strong></p>
 
-    	{% highlight html %}
+    	{% highlight html linenos %}
       <!DOCTYPE html>
       <html>
         <body>
           <div>
-            <h1>My First Heading</h1>
-            <p>My first paragraph.</p>
-            <a href="#">My first Link</a>
+            <h1>Heading</h1>
+            <p>Paragraph</p>
+            <a href="#">Link</a>
           </div>
         </body>
       </html>
@@ -83,7 +83,7 @@ title: Introduction to CSS
 
     	<strong>Now lets style our example HTML with some basic CSS selectors:</strong>
 
-    	{% highlight css %}
+    	{% highlight css linenos %}
         body {
             font-family:Arial;
         }
@@ -124,7 +124,7 @@ title: Introduction to CSS
         <p>CSS allows you to specify your own semantic selectors with the Class &amp; ID system.</p>
 
         <strong>HTML with Classes &amp; IDs added:</strong>
-        {% highlight html %}
+        {% highlight html linenos %}
       <!DOCTYPE html>
       <html>
         <body>
@@ -155,7 +155,7 @@ title: Introduction to CSS
 
         <p>All pseudo selectors will be preceded by a colon, and the selector they are targeting.</p>
 
-        {% highlight css %}
+        {% highlight css linenos %}
         a:hover {
             text-decoration:underline;
         }
@@ -184,7 +184,7 @@ title: Introduction to CSS
 
         <p>Related to specificity is the <code>!important</code> declaration.  <code>!important</code> is used after you make a CSS declaration, before the line ending semi-colon.</p>
 
-        {% highlight css %}
+        {% highlight css linenos %}
         p {
             color: #000 !important;
         }
@@ -192,7 +192,7 @@ title: Introduction to CSS
 
         <p>The only way to override an <code>!important</code> declaration, is to declare another <code>!important</code> specification later in the CSS.  As CSS cascades, the last declaration with matching specificity will be applied.</p>
 
-        {% highlight css %}
+        {% highlight css linenos %}
         p {
             color: #000 !important;
         }
@@ -212,7 +212,7 @@ title: Introduction to CSS
 
         <p>One of the few times <code>!important</code> is used well, is when you need to override an inline style applied to an element dynamically, and you do not have access to the source code, or cannot change the source-code for a certain display option.</p>
 
-        {% highlight html %}
+        {% highlight html linenos %}
         <div id="newsletterSignup" style="display:block; position:absolute; top:20px; left:200px;">
             <input type="text" name="email">
             <a href="somepage.html" title="Sign up now!">Sign up now!</a>
@@ -221,7 +221,7 @@ title: Introduction to CSS
 
         <p>Assume that the above div is coming in from a third-party plug-in, and is getting some inline styles added to it that are throwing it out aof alignment, and cutting off the content.  Just targeting the CSS ID <code>#newsletterSignup</code> would not work, even though an ID has the highest specificity, and it is the correlating name of the element.</p>
         
-        {%highlight css%}
+        {%highlight css linenos%}
         #newsletterSignup {
             left:100px !important;
         }
@@ -229,7 +229,7 @@ title: Introduction to CSS
 
         <p>This would not work to override an inline style.  To be clear, you would be seeing your desired result, but you would be targeting the element as a whole, and applying that positioning to that element, rather than simply overriding inline styles, and preventing further conflicts.</p>
 
-        {%highlight css%}
+        {%highlight css linenos%}
         #newsletterSignup[style] {
             left:100px !important;
         }
