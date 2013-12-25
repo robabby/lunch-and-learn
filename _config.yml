@@ -1,3 +1,4 @@
 name: CSS Lunch and Learn
 markdown: redcarpet
 pygments: true
+baseurl: /lunch-and-learn
