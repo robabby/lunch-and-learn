@@ -25,7 +25,7 @@ title: Introduction to CSS
 
     <p>CSS was developed back in 1996 to provide a separation of concerns from information content &amp; details of how to display it.</p>
 
-    <p>There are no real alternatives to CSS, but there are many tools which have found ways to improve on certain aspects of the CSS coding practices.  The end result will always be produced as plain old CSS, but <em>languages</em> like <a href="http://lesscss.org">LESS CSS</a> can let you be more productive when writing your code.</p>
+    <p>There are no real alternatives to CSS, but there are many tools which have found ways to improve on certain aspects of the CSS coding practices.  The end result will always be produced as plain old CSS, but alternatives like <a href="http://lesscss.org">LESS CSS</a> can let you be more productive when writing your code.</p>
 
     <hr />
 
@@ -50,6 +50,55 @@ title: Introduction to CSS
     </head>
     <body>
         <p>Hello World!</p>
+    </body>
+    </html>
+    {% endhighlight %}
+
+    <br />
+
+    <h4>Method 2: Internal Style Sheet</h4>
+
+    <p>An internal stylesheet, is when you wrap a block of CSS declarations in a <code>&lt;style&gt;</code> tag inside the <code>&lt;head&gt;</code> of a document.</p>
+
+    <strong>Example:</strong>
+
+    {% highlight html linenos %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>CSS Lunch and Learn</title>
+        <style type="text/css">
+        body {
+            background:#39F;
+            font-family:Arial;
+        }
+        p {
+            font-size:14px;
+        }
+        </style>
+    </head>
+    <body>
+        <p>Hello World!</p>
+    </body>
+    </html>
+    {% endhighlight %}
+
+    <br />
+
+    <h4>Method 3: Inline Styles</h4>
+
+    <p>Inline style sare styles added directly to the element that you are trying to style, in the HTML document itself.  The styles are collected into a <code>style</code> attribute</p>
+
+    <strong>Example:</strong>
+
+    {% highlight html linenos %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>CSS Lunch and Learn</title>
+    </head>
+    <body style="background-color:#39F; font-family:Arial;">
+        <p style="font-size:14px">Hello World!</p>
     </body>
     </html>
     {% endhighlight %}
