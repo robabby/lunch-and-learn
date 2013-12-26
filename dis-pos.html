@@ -43,7 +43,13 @@ title: Display & Position
 
     <br />
 
-    <h3 class="sub-title">Block vs. Inline</h3>
+    <h3 class="sub-title">Inline vs. Inline Block</h3>
+
+    <p>An inline-block element is placed as an inline element (on the same line as adjacent content), but it behaves as a block element.  An inline block element can accept width &amp; height properties, but an inline element cannot.</p>
+
+    <br />
+
+    <h3 class="sub-title">Block vs. Inline-Block</h3>
 
     <p>I like to think of the display property as the first specification to building a custom lego set.  You specify the properties, size and color of your pieces, then organize them on a web page in any way you see fit.  The starting point for specifying the propertie of one of your leggos peices is what type of display you want it to have.</p>
 
@@ -77,7 +83,90 @@ title: Display & Position
 
     <strong>The Result:</strong>
 
-    <iframe src="{{ site.baseurl }}/lessons/dis-pos/display-block.html"></iframe>
+    <iframe src="{{ site.baseurl }}/lessons/dis-pos/block.html"></iframe>
 
-    <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/display-block.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/block.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+    <br />
+
+    <h4>Inline-Block</h4>
+
+    <p><strong>display:inline-block</strong> will create an inline element that allows other elements to the left or right of it by default when rendered on the page.  An inline-block element can accept arguments for width and height.</p>
+
+    {%highlight css linenos%}
+    .box {
+       display: inline-block;
+       width:50px;
+       height:50px;
+       border:1px solid #39F;
+    }
+    {%endhighlight%}
+
+    {% highlight html linenos %}
+      <!DOCTYPE html>
+      <html>
+        <head>
+            <title>CSS Lunch and Learn</title>
+        </head>
+        <body>
+          <div class="box"></div>
+          <div class="box"></div>
+        </body>
+      </html>
+    {% endhighlight %}
+
+    <strong>The Result:</strong>
+
+    <iframe src="{{ site.baseurl }}/lessons/dis-pos/inline-block.html"></iframe>
+
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/inline-block.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+    <br />
+
+    <h4>Inline</h4>
+
+    <p><strong>display:inline</strong> will create an inline element that allows other elements to the left or right of it by default when rendered on the page.  An inline element does NOT accept arguments for width and height.</p>
+
+    {%highlight css linenos%}
+    .box {
+       display: inline;
+       width:50px;
+       height:50px;
+       border:1px solid #39F;
+    }
+    {%endhighlight%}
+
+    {% highlight html linenos %}
+      <!DOCTYPE html>
+      <html>
+        <head>
+            <title>CSS Lunch and Learn</title>
+        </head>
+        <body>
+          <div class="box"></div>
+          <div class="box"></div>
+        </body>
+      </html>
+    {% endhighlight %}
+
+    <strong>The Result:</strong>
+
+    <iframe src="{{ site.baseurl }}/lessons/dis-pos/inline.html"></iframe>
+
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/inline.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+    <br />
+
+    <h4>None</h4>
+
+    <p><strong>display:none</strong> will completely hide an element from the viewport.  None of its properties will effect the DOM until it is turned on again to one of the other display properties.</p>
+
+    {%highlight css linenos%}
+    .box {
+       display: none;
+       width:50px;
+       height:50px;
+       border:1px solid #39F;
+    }
+    {%endhighlight%}
 </div>
