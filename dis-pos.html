@@ -31,15 +31,53 @@ title: Display & Position
     }
 	{%endhighlight%}
 
+    <p>HTML elements will be considered either a block-level element, or an inline-element by default.</p>  
+
+    <p>The most commonly used <a href="https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements"><strong>block-level elements</strong></a> are <code>div | p | pre | ul, ol | form | section | article</code></p>
+
+    <p>The most commonly used <a href="https://developer.mozilla.org/en-US/docs/HTML/Inline_elements"><strong>inline elements</strong></a> are <code>a | span | i | input | select | label</code>.</p>
+
     <div class="well">
         <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;View a full list of the available display properties and their behaviors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">here</a></small>
     </div>
 
     <br />
 
-    <p>HTML elements will be considered either a block-level element, or an inline-element by default.</p>  
+    <h3 class="sub-title">Block vs. Inline</h3>
 
-    <p>The most commonly used <a href="https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements"><strong>block-level elements</strong></a> are <code>div | p | pre | ul, ol | form | section | article</code></p>
+    <p>I like to think of the display property as the first specification to building a custom lego set.  You specify the properties, size and color of your pieces, then organize them on a web page in any way you see fit.  The starting point for specifying the propertie of one of your leggos peices is what type of display you want it to have.</p>
 
-    <p>The most commonly used <a href="https://developer.mozilla.org/en-US/docs/HTML/Inline_elements"><strong>inline elements</strong></a> are <code>a | span | i | input | select | label</code>.</p>
+    <br />
+
+    <h4>Block</h4>
+
+    <p><strong>display:block</strong> will create a block-level element that does not allow other elements to the left or right of it by default when rendered on the page.  A block-level element will generate whitespace at the top &amp; bottom of itself causing another element to be forced to start on a new line.</p>
+
+    {%highlight css linenos%}
+    .box {
+       display: block;
+       width:50px;
+       height:50px;
+       border:1px solid #39F;
+    }
+    {%endhighlight%}
+
+    {% highlight html linenos %}
+      <!DOCTYPE html>
+      <html>
+        <head>
+            <title>CSS Lunch and Learn</title>
+        </head>
+        <body>
+          <div class="box"></div>
+          <div class="box"></div>
+        </body>
+      </html>
+    {% endhighlight %}
+
+    <strong>The Result:</strong>
+
+    <iframe src="{{ site.baseurl }}/lessons/dis-pos/display-block.html"></iframe>
+
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/display-block.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
 </div>
