@@ -7,3 +7,40 @@ title: Clear & Float
     <a class="pull-left" href="{{ site.baseurl }}/dis-pos.html"><i class="glyphicon glyphicon-chevron-left"></i> Display &amp; Position</a>
     <a class="pull-right" href="{{ site.baseurl }}/nav-example.html">Navigation Tutorial <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
+
+<h1>Clear &amp; Float</h1>
+
+<div class="col-md-12 wrapper shadow-med">
+	<p>Floating and clearing elements is a very popular way to manipulate content, and the layout of a page.</p>
+
+	<h2 class="title">Float</h2>
+
+	<p>With CSS float, an element can be pushed to the left or right, allowing other elements to wrap around it.</p>
+
+	<p>Float is very often used for images, but it is also useful when working with layouts.</p>
+
+	<strong>HTML Example paragraph without Float:</strong>
+
+	{%highlight html linenos%}
+	<img src="http://placehold.it/100x100" />
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+	{%endhighlight%}
+
+    <iframe src="{{ site.baseurl }}/lessons/clear-float/text-no-float.html"></iframe>
+
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/clear-float/text-no-float.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+    <br />
+
+    <strong>HTML Paragraph with Float:</strong>
+
+	{%highlight css linenos%}
+    img {
+	   float: left;
+    }
+	{%endhighlight%}
+
+    <iframe src="{{ site.baseurl }}/lessons/clear-float/text-with-float.html"></iframe>
+
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/clear-float/text-with-float.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+</div>
