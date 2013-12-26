@@ -11,7 +11,7 @@ title: Display & Position
 <h1>Understanding Display &amp; Position</h1>
 
 <div class="col-md-12 wrapper shadow-med">
-	<h3 class="title">The Display Property</h3>
+	<h2 class="title">The Display Property</h2>
 	<p>The <code>display</code> CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet.</p>
 
 	<p>The most commonly used display properties are <code>inline | inline-block | block | none</code></p>
@@ -174,7 +174,7 @@ title: Display & Position
         <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;View a full list of the available display properties and their behaviors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">here</a></small>
     </div>
 
-    <h4>Further resources:</h4>
+    <h4>Resources:</h4>
 
     <ul>
         <li>
@@ -195,5 +195,37 @@ title: Display & Position
     <hr />
     <br />
 
-    <h3 class="title">The Position Property</h3>
+    <h2 class="title">The Position Property</h2>
+
+    <p>The CSS positioning properties allow you to position an element. It can also place an element behind another, and specify what should happen when an element's content is too big.</p>
+
+    <p>Elements can be positioned using the top, bottom, left, and right properties. However, these properties will not work unless the position property is set first. They also work differently depending on the positioning method.</p>
+
+    <p>There are four different positioning methods.</p>
+
+    <p><strong>Static</strong> - HTML elements are positioned static by default. A static positioned element is always positioned according to the normal flow of the page.</p>
+
+    <p>Static positioned elements are not affected by the top, bottom, left, and right properties.</p>
+
+    <p><strong>Relative</strong> - A relative positioned element is positioned relative to its normal position.  The content of relatively positioned elements can be moved and overlap other elements, but the reserved space for the element is still preserved in the normal flow.</p>
+
+    <p>Relatively positioned elements are often used as container blocks for absolutely positioned elements.</p>
+
+    <p><strong>Absolute</strong> - An absolute position element is positioned relative to the first parent element that has a position other than static. If no such element is found, the containing block is <code>&lt;html&gt;</code></p>
+
+    <p><strong>Fixed</strong> - An element with fixed position is positioned relative to the browser window.  It will not move even if the window is scrolled</p>
+
+    <h4>Resources:</h4>
+
+    <ul>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">https://developer.mozilla.org/en-US/docs/Web/CSS/position</a>
+        </li>
+        <li>
+            <a href="http://www.w3schools.com/css/css_positioning.asp">http://www.w3schools.com/css/css_positioning.asp</a>
+        </li>
+        <li>
+            <a href="http://alistapart.com/article/css-positioning-101/">http://alistapart.com/article/css-positioning-101/</a>
+        </li>
+    </ul>
 </div>
