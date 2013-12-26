@@ -1,5 +1,7 @@
 #CSS Lunch & Learn
 
+[View Project Website](http://stat30fbliss.github.io/lunch-and-learn/)
+
 This project is focused on educating the basics of CSS.  The project includes three pages focused on introducing certain aspects of CSS, and finishes with an example building a navigation bar.
 
 If you would like to launch this project locally, you will need to have [Ruby & Rails](http://railsinstaller.org) installed, along with the [Jekyll](http://jekyllrb.com) Gem.
