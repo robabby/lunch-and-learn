@@ -1,24 +1,43 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Navigation Example</title>
-    <link rel="stylesheet" type="text/css" href="css/1-2.css">
+    <style type="text/css"> 
+    html, body {
+      padding:0px;
+      margin: 0px;
+    } 
+    .navbar {
+      display:block;
+      position:relative;
+      width:100%;
+      border-bottom:1px solid #ccc;
+      box-shadow:0px 0px 5px 0px rgba(0, 0, 0, .5);
+    }
+    .navbar ul {
+      list-style:none;
+      padding:0px;
+      margin:0;
+    }
+    </style>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="#">Home</a>
+    <nav id="mainNav" class="navbar">
+      <span class="branded">Navbar Example</span>
+      <ul class="nav-wrap">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a class="nav-link" href="#">About</a>
         </li>
         <li>
-          <a href="#">Services</a>
+          <a class="nav-link" href="#">Services</a>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a class="nav-link" href="#">Contact</a>
         </li>
-      </ul>
-    </nav>
+      </ul><!-- .nav-wrap -->
+    </nav><!-- .navbar -->
   </body>
 </html>
