@@ -11,23 +11,36 @@ title: Clear & Float
 <h1>Clear &amp; Float</h1>
 
 <div class="col-md-12 wrapper shadow-med">
-	<p>Floating and clearing elements is a very popular way to manipulate content, and the layout of a page.  They are also some of the most misunderstood, and mis-used concepts in web development.</p>
+	<p>Floating and clearing elements is a very popular way to manipulate content, and the layout of a page.  They are also some of the most misunderstood, and mis-used concepts in web development.  Learning how and when to float or clear an element to get your layout to work the way you are wanting to can take a lot of time and patience.</p>
 
-	<p>Learning how and when to float or clear an element to get your layout to work the way you are wanting to can take a lot of time and patience.  You can lose a lot of hours trying to hammer that floated image into the proper place, and once you do, your paragraph overflows and your back at the drawing board.</p>
+	<br />
 
 	<h2 class="title">Float</h2>
 
-	<p>With CSS float, an element can be pushed to the left or right, allowing other elements to wrap around it.</p>
+	<blockquote><em>The float property is a valuable and powerful asset to any web designer/developer working with HTML and CSS. Tragically, it can also cause frustration and confusion if you don’t fully understand how it works.</em></blockquote>
 
-	<p>Float is very often used for images, but it is also useful when working with layouts.</p>
+	<p class="pull-right"><a href="http://alistapart.com/article/css-floats-101">A List Apart</a></p>
+
+	<br />
+
+	<p>With <code>float</code>, an element can be pushed to the left or right, allowing other elements to wrap around it. The only arguments the float property can take are <code>left | right | none | inherit</code>.  Most often times you will be using <code>left | right</code>.</p>
+
+	<br />
 
 	<strong>HTML Example paragraph without Float:</strong>
 
 	{%highlight html linenos%}
-	<img src="http://placehold.it/100x100" />
-	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, 
-	feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi 
-	vitae est. Mauris placerat eleifend leo.</p>
+	<html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <img src="http://placehold.it/100x100" />
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, 
+            feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi 
+            vitae est. Mauris placerat eleifend leo.</p>
+        </body>
+    </html>
 	{%endhighlight%}
 
     <iframe src="{{ site.baseurl }}/lessons/clear-float/text-no-float.html"></iframe>
@@ -47,4 +60,94 @@ title: Clear & Float
     <iframe src="{{ site.baseurl }}/lessons/clear-float/text-with-float.html"></iframe>
 
     <p><a target="_blank" href="{{ site.baseurl }}/lessons/clear-float/text-with-float.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+    <br />
+
+    <p>As you can see, this example just took two block-level elements and put them on the same line by using the float property.</p>
+
+    <hr />
+
+    <h4>Resources:</h4>
+
+    <ul>
+        <li>
+            <a href="http://alistapart.com/article/css-floats-101">http://alistapart.com/article/css-floats-101</a>
+        </li>
+        <li>
+            <a href="http://css-tricks.com/all-about-floats/">http://css-tricks.com/all-about-floats/</a>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">https://developer.mozilla.org/en-US/docs/Web/CSS/float</a>
+        </li>
+        <li>
+        	<a href="http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/">http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/</a>
+        </li>
+        <li>
+        	<a href="http://coding.smashingmagazine.com/2009/10/19/the-mystery-of-css-float-property/">http://coding.smashingmagazine.com/2009/10/19/the-mystery-of-css-float-property/</a>
+        </li>
+    </ul>
+
+    <br />
+    <br />
+
+    <h2 class="title">Clear</h2>
+
+    <p>The clear CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them.</p>
+
+    <p>You will usually see the <code>clear</code> property tied to it's own utility class that is used to remedy floats somewhere in a page.</p>
+
+    {%highlight css linenos%}
+    .clearfix {
+	   clear: both;
+    }
+	{%endhighlight%}
+
+    <p>Using the float example HTML, lets add in a second paragraph that we do not want to wrap around the image tag.</p>
+
+    {%highlight html linenos%}
+    <html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <img src="http://placehold.it/100x100" />
+
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, 
+            feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi 
+            vitae est. Mauris placerat eleifend leo.</p>
+
+            <div class="clearfix"></div>
+
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, 
+            feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi 
+            vitae est. Mauris placerat eleifend leo.</p>
+        </body>
+    </html>
+    {%endhighlight%}
+
+    <iframe src="{{ site.baseurl }}/lessons/clear-float/text-with-clear.html"></iframe>
+
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/clear-float/text-with-clear.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+    <br />
+
+    <h4>Resources:</h4>
+
+    <ul>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear">https://developer.mozilla.org/en-US/docs/Web/CSS/clear</a>
+        </li>
+        <li>
+            <a href="http://www.quirksmode.org/css/clearing.html">http://www.quirksmode.org/css/clearing.html</a>
+        </li>
+        <li>
+            <a href="http://css-tricks.com/almanac/properties/c/clear/">http://css-tricks.com/almanac/properties/c/clear/</a>
+        </li>
+        <li>
+            <a href="http://css-tricks.com/snippets/css/clear-fix/">Force Element To Self-Clear its Children</a>
+        </li>
+        <li>
+            <a href="http://davidwalsh.name/css-clear-fix">http://davidwalsh.name/css-clear-fix</a>
+        </li>
+    </ul>
 </div>
