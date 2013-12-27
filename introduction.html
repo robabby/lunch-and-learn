@@ -276,10 +276,102 @@ title: Introduction to CSS
         
         <p>In case of specificity equality, the latest declaration found in the CSS is applied to the element.</p>
 
+        <hr />
+
+        <p>One way to visualize specificity is with three comma separated numbers:</p>
+
+        <pre>0, 0, 0</pre>
+
+        <p>Each number correllates to a type of selector, and the specificity that comes along with it.  Specificity also moves from left to right.  The left most number is the most specific, while the right sided number is the least specific.</p>
+
+        <p>The furthest left number is the most specific, and correlates to ID's.  ID's have the highest specificity for a selector used in external CSS, and should be used with caution when targeting elements.</p>
+
+        <p>The middle number correlates to classes.  Any time you target an element only by it's class name, you are using medium specificity to target it.</p>
+
+        <p>The furthest right number is the lowest specificity, and correlates to selecting elements by their HTML tag name.  The lowest specific way to target anything on a webpage.</p>
+
+        <hr />
+
+        <p>For example, lets start with a little bit of HTML and step through all of the levels of specificity.</p>
+
+        {% highlight html linenos %}
+      <!DOCTYPE html>
+      <html>
+        <body>
+          <section id="content">
+            <article class="post">
+                <h2 class="headline">Some BLog Post Title</h2>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, 
+                feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi 
+                vitae est. Mauris placerat eleifend leo. <a class="read-more" href="#">Read More</a></p>
+            </article>
+          </section>
+        </body>
+      </html>
+        {% endhighlight %}
+
+        <p>Our goal is to target the <code>&lt;a&gt;</code> tag wrapped in the <code>&lt;p&gt;</code> tag, the deepest nested element in our example.</p>
+
+        <p>The simplest, and least specific way to select the element is by calling it simply by the element outright in the CSS:</p>
+
+        {% highlight css linenos %}
+        a {
+            color:#333;
+        }
+        {% endhighlight %}
+
+        <p>This selector will produce the lowest specificity possible:</p>
+
+        <pre>0, 0, 1</pre>
+
+        <p>This is poor specificity because now we are coloring every link on pages where this snippet of CSS is included grey, which probably is not be ideal. Let's look at the specificity of targeting the <code>&lt;p&gt;</code> tag and the link.</p>
+
+        {% highlight css linenos %}
+        p a {
+            color:#333;
+        }
+        {% endhighlight %}
+
+        <pre>0, 0, 2</pre>
+
+        <p>We are a little more specific, but still not realy encapsulating our selector enough to ensure that we are targeting the proper element at all times.  Let's start using the class name of the wrapping element to be more specific.</p>
+
+        {% highlight css linenos %}
+        .post p a {
+            color:#333;
+        }
+        {% endhighlight %}
+
+        <pre>0, 1, 2</pre>
+
+        <p>It looks like we have a class name tied to the anchor link we are trying to target, so we can also go ahead and use that class name instad of just targeting the <code>&lt;a&gt;</code> tag.</p>
+
+        {% highlight css linenos %}
+        .post p .read-more {
+            color:#333;
+        }
+        {% endhighlight %}
+
+        <pre>0, 2, 1</pre>
+
+        <p>This is usually as specific as someone needs to get to ensure that you are both targeting the element you want to target, and exclusing all of the elements you don't want collecting unwanted styles.  Of course, it will always depend on the problem at hand, and the type of website or application you are working on. It is always a bit safer to go more specific than less, but you want to be careful and not have your selectors become too specific, forcing you to create many selectors in your CSS that do a lot of the same things.</p>
+
+        <p>Using the same HTML example above, the most specific selector we can come up with from that HTML would be as follows (excluding the <code>&lt;html&gt;</code> &amp; <code>&lt;body&gt;</code> tags).</p>
+
+        {% highlight css linenos %}
+        #content article.post p a.read-more {
+            color:#333;
+        }
+        {% endhighlight %}
+
+        <pre>1, 2, 3</pre>
+
+        <br />
+
         <p>Here are some great specificity resources:</p>
         <ul>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank"><b>MDN</b> Specificity</a></li>
-            <li><a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/"><b>Smashing Magazin</b> CSS Specificity: Things You Should Know</a></li>
+            <li><a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/"><b>Smashing Magazine</b> CSS Specificity: Things You Should Know</a></li>
             <li><a href="http://css-tricks.com/specifics-on-css-specificity/"><strong>CSS-Tricks</strong> Specifics on CSS Specificity</a></li>
         </ul>
 
