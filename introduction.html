@@ -127,7 +127,9 @@ title: Introduction to CSS
     <div id="selectors" class="lesson">
     	<h3 class="title">Selectors</h3>
 
-    	<p><strong>Start with some plain HTML</strong></p>
+        <p>CSS Selector do exactly as the name describes.  They <em>select</em> an element from a web page and manipulate it's presentation by adding properties to that selection.</p>
+
+    	<p>We will start with some plain basic HTML, with six selectable elements - <code>html | body | div | h1 | p | a</code></p>
 
     	{% highlight html linenos %}
       <!DOCTYPE html>
@@ -191,6 +193,8 @@ title: Introduction to CSS
 
         <p>We used the most basic of selectors, the element selector, to select the parts of the page we wanted to style, and then applied some styling declarations to those selectors to create a desired result. Although this works well for styling elements, we would quickly run out of presentation options, and our designs would be pretty plain.</p>
 
+        <p>Unless you are building a very simple web page, you generally want to avoid targeting elements, and instead target a wrapping class or ID, and then drill down to the element you are wanting to manipulate.</p>
+
         <br />
 
         <h4 class="title">Classes &amp; IDs to the rescue</h4>
@@ -201,7 +205,7 @@ title: Introduction to CSS
       <!DOCTYPE html>
       <html>
         <body>
-          <div id="wrapper">
+          <div id="mainContent" class="wrapper">
             <h1 class="title">My First Heading</h1>
             <p class="headline">My first paragraph.</p>
             <a class="affiliate" href="#">My first Link</a>
@@ -216,29 +220,48 @@ title: Introduction to CSS
         body {
             font-family:Arial;
         }
-        #wrapper {
+        h1, p, a {
+            line-height:1.2;
+        }
+        .wrapper {
             padding:5px;
             box-shadow:0px 0px 5px 0px #000;
             background-color:#eee;
         }
-        h1, p, a {
-            font-family:Arial;
-        }
-        .title {
+        .wrapper .title {
             margin-bottom:15px;
             font-size:24px;
             text-decoration:underline;
             font-variant:small-caps;
         }
-        .headline {
+        .wrapper .headline {
             font-size:14px;
             margin-bottom:10px;
         }
-        .affiliate {
+        .wrapper .affiliate {
             color:#09f;
             text-decoration: none;
         }
         {% endhighlight %}
+
+        <p>With the previous example you can see that we made our broad declarations at the top of the stylesheet, and got more specific as we went down.</p>
+
+        <p>On line #4 we used the multi-selection syntax to select all of the text nodes we know we want to have a certain line-height.  To select multiple elements with the same declaration, you only need to separate those selectors with a comma, and each one will collect the declared styles</p>  
+
+        <p>On line #12 we see our first specific element selector.  We could have very easily also done:</p>
+
+        {% highlight css linenos %}
+        .wrapper h1 {
+            margin-bottom:15px;
+            font-size:24px;
+            text-decoration:underline;
+            font-variant:small-caps;
+        }
+        {% endhighlight %}
+
+        <p>The problem with that solution is now we have isolated all <code>&lt;h1&gt;</code> tags that may appear under the <code>.wrapper</code> div and atrgeted for that style.  Aside from the SEO issues from using multiple <code>&lt;h1&gt;</code> tags on a page, you never want to target an element by it's tag name unless you are absolutely positive that the design calls for that behavior, and no other elements will be effected further down the line.</p>
+
+        <p>Using two class names has a higher specificity than a class selector and an element selector, a topic we will cover further down the page.</p>
     </div>
 
     <div id="pseudo" class="lesson">
