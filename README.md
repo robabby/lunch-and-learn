@@ -7,9 +7,11 @@ This project is focused on educating the basics of CSS.  The project currently i
 If you would like to launch this project locally, you will need to have [Ruby & Rails](http://railsinstaller.org) installed, along with the [Jekyll](http://jekyllrb.com) Gem.
 
 After Ruby & Rails are installed in a Command Prompt run the following command to install Jekyll:
+	
 	gem install jekyll 
 
 Once the installation has finished, navigate to the project directory in a command prompt/terminal and then execute a: 
+	
 	bundle install 
 
 Note that if you are on Linux or OSX, you do not need the [WDM](http://rubygems.org/gems/wdm) gem.  This is necessary for Windows only.  If you don't need this open the Gemfile at the root of the project and remove line 3.
