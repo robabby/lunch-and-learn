@@ -18,7 +18,7 @@ Note that if you are on Linux or OSX, you do not need the [WDM](http://rubygems.
 
 Once everything has finished installing, you are ready to view the project.
 
-Execute 'jekyll serve -w' in the project root to build your project and serve it to http://localhost:4000/lunch-and-learn/
+Execute `jekyll serve -w` in the project root to build your project and serve it to http://localhost:4000/lunch-and-learn/
 
 Notice using the `jekyll serve` with the `-w` flag will 'watch' the directory for changes, allowing you to develop your app without having to recompile after your changes.
 
