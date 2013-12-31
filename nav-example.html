@@ -11,6 +11,8 @@ title: Building a Navigation Bar
 
 <div class="col-md-12  wrapper shadow-med">
   
+  <p>Our goal with this tutorial is to build a simple navigation bar from scratch.  The navigation will need to be 50px high while containing four links and the title of the website.</p>
+
   <p>We will start with a vanilla HTML document structure</p>
 
 	{% highlight html linenos %}
@@ -57,8 +59,8 @@ title: Building a Navigation Bar
 
     <strong>The Result:</strong>
 
-    <iframe src="{{ site.baseurl }}//lessons/navbar/1-1.html"></iframe>
-    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-1.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-1.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-1.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
 
     <br />
 
@@ -124,8 +126,8 @@ title: Building a Navigation Bar
 
     <strong>The Result:</strong>
 
-    <iframe src="{{ site.baseurl }}//lessons/navbar/1-2.html"></iframe>
-    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-2.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-2.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-2.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
 
     <br />
 
@@ -154,14 +156,16 @@ title: Building a Navigation Bar
 
     <strong>The Result:</strong>
 
-    <iframe src="{{ site.baseurl }}//lessons/navbar/1-3.html"></iframe>
-    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-3.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-3.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-3.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
 
     <br />
 
     <p>We have added a <code>float:right</code> declaration to our <code>.navbar ul</code> selector, and a <code>float:left</code> to the individual <code>.nav-item</code>'s.  Using a <code>float:left</code> on <code>&lt;li&gt;</code>'s always produces a left-to-right layout of each item, making the code and product nicely readable.  This has placed our navigation items neatly on the right side of the page, just where we want them.</p>
 
-    <p>Next we are going to want to start setting the width and height of the individual navigation elements, and prepare them for more styling.  We will start by adding some <code>padding</code> &amp; some <code>height</code>.</p>
+    <p>Next we are going to want to start setting the width and height of the individual navigation elements, and prepare them for more styling.  We will start by adding some <code>padding</code> &amp; some <code>height</code> to our <code>&lt;li&gt;</code>'s.  Take notice that our specification was to build a navigation bar that is 50 pixels high, but we have only specified a height of 40 pixels in our <code>&lt;li&gt;</code>'s <code>height</code> property.  That is because of the CSS 2.0 <code>box-sizing</code>.  Before the onset of CSS 3.0 property <code>box-sizing</code>, we were left to compute the total width of an element based on the totals of its <code>width</code>, <code>padding</code> &amp; <code>border</code> properties.</p>
+
+    <p>Since discussing the differences between CSS 2.0 &amp; 3.0 are beyond the scope of this tutorial, and many people still have to work with Internet Explorer 7, we will not include any more <code>box-sizing</code> discussion.  But, feel free to go read up more on <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">Paul Irish's Blog</a>.</p>
 
     {%highlight css linenos%}
     .navbar {
@@ -184,8 +188,8 @@ title: Building a Navigation Bar
     }
     {%endhighlight%}
 
-    <iframe src="{{ site.baseurl }}//lessons/navbar/1-4.html"></iframe>
-    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-4.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-4.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-4.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
 
     <br />
 
@@ -248,8 +252,8 @@ title: Building a Navigation Bar
     </html>
     {% endhighlight %} 
 
-    <iframe src="{{ site.baseurl }}//lessons/navbar/1-5.html"></iframe>
-    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-5.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-5.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-5.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
 
     <br />
     <br />
@@ -310,8 +314,8 @@ title: Building a Navigation Bar
     </html>
     {% endhighlight %} 
 
-    <iframe src="{{ site.baseurl }}//lessons/navbar/1-6.html"></iframe>
-    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-6.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-6.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-6.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
 
     <br />
     <br />
@@ -355,13 +359,15 @@ title: Building a Navigation Bar
     }
     {%endhighlight%}
 
-    <iframe src="{{ site.baseurl }}//lessons/navbar/1-7.html"></iframe>
-    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-7.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-7.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-7.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
 
     <br />
     <br />
 
-    <p>Looking better, but one of the most fun things to do when building a nav bar, is coming up with creative ways to display interaction.  Let's go ahead and add a small touch of interaction to show when a navigation element is hovered over.</p>
+    <p>Looking better.  Let's go ahead and add a small touch of interaction to show when a navigation element is hovered over. The design calls for adding a 5px blue border to the bottom of the navigation.  However, due to the <code>box-sizing</code> of html</p>
+
+    <p>In CSS 3.0, there is a property called <code>box-sizing</code></p>
 
     {%highlight css linenos%}
     .navbar {
@@ -399,8 +405,8 @@ title: Building a Navigation Bar
     }
     {%endhighlight%}
 
-    <iframe src="{{ site.baseurl }}//lessons/navbar/1-8.html"></iframe>
-    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-8.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-8.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-8.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
 
     <br />
     <br />
