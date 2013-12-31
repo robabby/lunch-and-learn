@@ -179,8 +179,8 @@ title: Building a Navigation Bar
     }
     .navbar ul li {
       float:left;
-      padding:5px 10px;
-      height:40px;
+      padding:0px 10px;
+      height:50px;
     }
     {%endhighlight%}
 
@@ -214,8 +214,8 @@ title: Building a Navigation Bar
     }
     .navbar ul li {
       float:left;
-      padding:5px 10px;
-      height:40px;
+      padding:0px 10px;
+      height:50px;
     }
     {%endhighlight%}
 
@@ -254,7 +254,7 @@ title: Building a Navigation Bar
     <br />
     <br />
 
-    <p>This shows that the <code>.clearfix</code> method is effective at clearing the floats specified on the <code>&lt;ul&gt;</code> &amp; <code>&lt;li&gt;</code>'s used to build the navigation. However adding a new element into the DOM is not necessary.  Targeting the <code>:after</code> pseudo-selector of our <code>.nav-wrap</code> element, we will be able to achieve the save effect with a little bit of CSS magic.</p>
+    <p>This shows that the <code>.clearfix</code> method is effective at clearing the floats specified on the <code>&lt;ul&gt;</code> &amp; <code>&lt;li&gt;</code>'s used to build the navigation. However adding a new element into the DOM is not necessary.  Targeting the <code>:after</code> pseudo-selector of our <code>.navbar</code> element, we will be able to achieve the save effect with a little bit of CSS magic.</p>
 
     {%highlight css linenos%}
     .navbar {
@@ -277,8 +277,8 @@ title: Building a Navigation Bar
     }
     .navbar ul li {
       float:left;
-      padding:5px 10px;
-      height:40px;
+      padding:0px 10px;
+      height:50px;
     }
     {%endhighlight%}
 
@@ -315,4 +315,92 @@ title: Building a Navigation Bar
 
     <br />
     <br />
+
+    <p>This is considered the <em>clear :after</em> hack, and is an excellent alternative to using a <code>.clearfix</code> element every time you need to clear a float.  Details and further reading on what this method is, and how to use it can be found <a href="#">here</a>.</p>
+
+    <br />
+
+    <p>Now that we have cleared our floats appropriately, and we are inheriting height accordingly, lets move on to styling our navigation text nodes, starting with the links.</p>
+
+    {%highlight css linenos%}
+    .navbar {
+      display:block;
+      position:relative;
+      width:100%;
+      border-bottom:1px solid #ccc;
+      box-shadow:0px 0px 5px 0px rgba(0, 0, 0, .5);
+    }
+    .navbar:after {
+      content:"";
+      display:block;
+      clear:both;
+    }
+    .navbar ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+      float:right;
+    }
+    .navbar ul li {
+      float:left;
+      padding:0px 10px;
+      height:50px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color:#555;
+      font-weight:bold;
+      font-family:Arial;
+      line-height: 50px;
+    }
+    {%endhighlight%}
+
+    <iframe src="{{ site.baseurl }}//lessons/navbar/1-7.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-7.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
+
+    <br />
+    <br />
+
+    <p>Looking better, but one of the most fun things to do when building a nav bar, is coming up with creative ways to display interaction.  Let's go ahead and add a small touch of interaction to show when a navigation element is hovered over.</p>
+
+    {%highlight css linenos%}
+    .navbar {
+      display:block;
+      position:relative;
+      width:100%;
+      border-bottom:1px solid #ccc;
+      box-shadow:0px 0px 5px 0px rgba(0, 0, 0, .5);
+    }
+    .navbar:after {
+      content:"";
+      display:block;
+      clear:both;
+    }
+    .navbar ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+      float:right;
+    }
+    .navbar ul li {
+      float:left;
+      padding:0px 10px;
+      height:50px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color:#555;
+      font-weight:bold;
+      font-family:Arial;
+      line-height: 50px;
+    }
+    {%endhighlight%}
+
+    <iframe src="{{ site.baseurl }}//lessons/navbar/1-8.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}//lessons/navbar/1-8.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
+
+    <br />
+    <br />
+
+    <p>And what if we wanted to the text color to be the same as the border color on <code>:hover</code>?</p>
 </div>
