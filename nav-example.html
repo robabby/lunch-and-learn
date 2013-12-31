@@ -64,7 +64,7 @@ title: Building a Navigation Bar
 
     <br />
 
-    <p>Although this is a working navigation layout, it is not ideal for what we are trying to build.  Let's start adding some classes and IDs to our DOM elements.</p>
+    <p>Although this is a working navigation layout, it is not ideal for what we are trying to build.  Let's start adding some classes to our DOM elements.</p>
 
     {% highlight html linenos %}
     <!DOCTYPE html>
@@ -73,20 +73,20 @@ title: Building a Navigation Bar
         <title>Navigation Example</title>
       </head>
       <body>
-        <nav id="mainNav" class="navbar">
-          <span class="branded">Navbar Example</span>
-          <ul class="nav-wrap">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+        <nav class="navbar">
+          <span class="brand">Navbar Example</span>
+          <ul>
+            <li>
+              <a href="#">Home</a>
             </li>
             <li>
-              <a class="nav-link" href="#">About</a>
+              <a href="#">About</a>
             </li>
             <li>
-              <a class="nav-link" href="#">Services</a>
+              <a href="#">Services</a>
             </li>
             <li>
-              <a class="nav-link" href="#">Contact</a>
+              <a href="#">Contact</a>
             </li>
           </ul><!-- .nav-wrap -->
         </nav><!-- .navbar -->
@@ -230,20 +230,20 @@ title: Building a Navigation Bar
         <title>Navigation Example</title>
       </head>
       <body>
-        <nav id="mainNav" class="navbar">
-          <span class="branded">Navbar Example</span>
-          <ul class="nav-wrap">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+        <nav class="navbar">
+          <span class="brand">Navbar Example</span>
+          <ul>
+            <li>
+              <a href="#">Home</a>
             </li>
             <li>
-              <a class="nav-link" href="#">About</a>
+              <a href="#">About</a>
             </li>
             <li>
-              <a class="nav-link" href="#">Services</a>
+              <a href="#">Services</a>
             </li>
             <li>
-              <a class="nav-link" href="#">Contact</a>
+              <a href="#">Contact</a>
             </li>
           </ul><!-- .nav-wrap -->
           <div class="clearfix"></div>
@@ -367,6 +367,10 @@ title: Building a Navigation Bar
 
     <p>Looking better.  Let's go ahead and add a small touch of interaction to show when a navigation element is hovered over. The design calls for adding a 5px blue border to the bottom of the navigation,  however due to the <code>box-sizing</code> issues we covered earlier, we are unable to add the 5px border to our code without editing some properties to stay under the 50 pixel limit.</p>
 
+    <p>Notice in the following example that we have lowered the height of the <code>&lt;li&gt;</code> to 45px, and added in a 5px white border to allow for the space needed to transition colors on hover.</p>
+
+    <p>At the end of the snippet we are targeting our <code>:hover</code> pseudo-selector and changing the color of the border, thus adding a user interaction.</p>
+
     {%highlight css linenos%}
     .navbar {
       display:block;
@@ -411,4 +415,107 @@ title: Building a Navigation Bar
     <br />
 
     <p>And what if we wanted to make the text color to be the same as the border color on <code>:hover</code>? Let's go ahead and add in the proper styles to make that happen.</p>
+
+    {%highlight css linenos%}
+    .navbar {
+      display:block;
+      position:relative;
+      width:100%;
+      border-bottom:1px solid #ccc;
+      box-shadow:0px 0px 5px 0px rgba(0, 0, 0, .5);
+    }
+    .navbar:after {
+      content:"";
+      display:block;
+      clear:both;
+    }
+    .navbar ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+      float:right;
+    }
+    .navbar ul li {
+      float:left;
+      padding:0px 10px;
+      height:45px;
+      border-bottom:5px solid #fff;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color:#555;
+      font-weight:bold;
+      font-family:Arial;
+      line-height: 50px;
+    }
+    .navbar ul li:hover {
+      border-bottom:5px solid #39F;
+    }
+    .navbar ul li:hover a {
+      color:#39f;
+    }
+    {%endhighlight%}
+
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-9.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-9.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
+
+    <br />
+    <br />
+
+    <p>Lastly, we just need to make our Website Title be a little more presentable to the user.</p>
+
+    {%highlight css linenos%}
+    .navbar {
+      display:block;
+      position:relative;
+      width:100%;
+      border-bottom:1px solid #ccc;
+      box-shadow:0px 0px 5px 0px rgba(0, 0, 0, .5);
+    }
+    .navbar:after {
+      content:"";
+      display:block;
+      clear:both;
+    }
+    .navbar ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+      float:right;
+    }
+    .navbar ul li {
+      float:left;
+      padding:0px 10px;
+      height:45px;
+      border-bottom:5px solid #fff;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color:#555;
+      font-weight:bold;
+      font-family:Arial;
+      line-height: 50px;
+    }
+    .navbar ul li:hover {
+      border-bottom:5px solid #39F;
+    }
+    .navbar ul li:hover a {
+      color:#39f;
+    }
+    .navbar .brand {
+      padding-left: 10px;
+      font-family: Arial;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 50px;
+    }
+    {%endhighlight%}
+
+    <iframe src="{{ site.baseurl }}/lessons/navbar/1-10.html"></iframe>
+    <p><a target="_blank" href="{{ site.baseurl }}/lessons/navbar/1-10.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>   
+
+    <br />
+    <br />
+
+    <p>And there you have it! A perfectly simple, and functional website navigation bar.</p>
 </div>

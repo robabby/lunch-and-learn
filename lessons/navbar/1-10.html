@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Navigation Example</title>
+    <style type="text/css"> 
+    html, body {
+      padding:0px;
+      margin: 0px;
+    }
+    .navbar {
+      display:block;
+      position:relative;
+      width:100%;
+      border-bottom:1px solid #ccc;
+      box-shadow:0px 0px 5px 0px rgba(0, 0, 0, .5);
+    }
+    .navbar:after {
+      content:"";
+      display: block;
+      clear: both;
+    }
+    .navbar ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+      float:right;
+    }
+    .navbar ul li {
+      float:left;
+      padding:0px 10px;
+      height:45px;
+      border-bottom:5px solid #fff;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color:#555;
+      font-weight:bold;
+      font-family:Arial;
+      line-height: 50px;
+    }
+    .navbar ul li:hover {
+      border-bottom:5px solid #39F;
+    }
+    .navbar ul li:hover a {
+      color:#39f;
+    }
+    .navbar .brand {
+      padding-left: 10px;
+      font-family: Arial;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 50px;
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <span class="brand">Navbar Example</span>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Services</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul><!-- .nav-wrap -->
+    </nav><!-- .navbar -->
+  </body>
+</html>
