@@ -365,9 +365,7 @@ title: Building a Navigation Bar
     <br />
     <br />
 
-    <p>Looking better.  Let's go ahead and add a small touch of interaction to show when a navigation element is hovered over. The design calls for adding a 5px blue border to the bottom of the navigation.  However, due to the <code>box-sizing</code> of html</p>
-
-    <p>In CSS 3.0, there is a property called <code>box-sizing</code></p>
+    <p>Looking better.  Let's go ahead and add a small touch of interaction to show when a navigation element is hovered over. The design calls for adding a 5px blue border to the bottom of the navigation,  however due to the <code>box-sizing</code> issues we covered earlier, we are unable to add the 5px border to our code without editing some properties to stay under the 50 pixel limit.</p>
 
     {%highlight css linenos%}
     .navbar {
@@ -391,7 +389,8 @@ title: Building a Navigation Bar
     .navbar ul li {
       float:left;
       padding:0px 10px;
-      height:50px;
+      height:45px;
+      border-bottom:5px solid #fff;
     }
     .navbar ul li a {
       text-decoration: none;
@@ -411,5 +410,5 @@ title: Building a Navigation Bar
     <br />
     <br />
 
-    <p>And what if we wanted to the text color to be the same as the border color on <code>:hover</code>? Let's go ahead and add in the proper styles to make that happen.</p>
+    <p>And what if we wanted to make the text color to be the same as the border color on <code>:hover</code>? Let's go ahead and add in the proper styles to make that happen.</p>
 </div>
