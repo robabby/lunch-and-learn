@@ -423,7 +423,7 @@ title: Introduction to CSS
 
         <p>Visual Studio's <a href="http://visualstudiogallery.msdn.microsoft.com/6ed4c78f-a23e-49ad-b5fd-369af0c2107f">Web Essentials</a> plug-in comes with a handy specificity feature, which will visualize your selectors specificity when you hover over it.</p>
 
-        <h1 style="color:red">#SCREENSHOT HERE#</h1>
+        <img src="{{ site.baseurl }}/images/specificity.png" />
     </div>
     <div id="important" class="lesson">
         <h3 class="title">!important</h3>
@@ -436,7 +436,7 @@ title: Introduction to CSS
         }
         {% endhighlight %}
 
-        <p>The only way to override an <code>!important</code> declaration, is to declare another <code>!important</code> specification later in the CSS.  As CSS cascades, the last declaration with matching specificity will be applied.</p>
+        <p>The only way to override an <code>!important</code> declaration, is to declare another <code>!important</code> specification later in the CSS, or to add an inline style.  As CSS cascades, the last declaration with matching specificity will be applied.</p>
 
         {% highlight css linenos %}
         p {
@@ -449,6 +449,8 @@ title: Introduction to CSS
             color:#06f !important;
         }
         {% endhighlight %}
+
+        <p>In the previous example, the last <code>p</code> selector will be applied, because it is the last selector to target that element with <code>!important</code> declared.</p>
 
         <div class="well">
             <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;<code>!important</code> is your best friend and worst enemy!  Chances are that if you are using it, you are doing something wrong.  It is an edge-case property that should be saved for times when there is literally no other options available.</small>
