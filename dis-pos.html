@@ -11,221 +11,224 @@ title: Display & Position
 <h1>Display &amp; Position</h1>
 
 <div class="col-md-12 wrapper shadow-med">
-	<h2 class="title">The Display Property</h2>
-	<p>The <code>display</code> CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet.</p>
+    <div class="lesson">
+    	<h2 class="title">The Display Property</h2>
+    	<p>The <code>display</code> CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet.</p>
 
-	<p>The most commonly used display properties are <code>inline | inline-block | block | none</code></p>
-	
-	{%highlight css linenos%}
-    div {
-	   display: inline;
-    }
-    div {
-	   display: inline-block;
-    }
-    div {
-        display: block;
-    }
-    div {
-        display: none;
-    }
-	{%endhighlight%}
+    	<p>The most commonly used display properties are <code>inline | inline-block | block | none</code></p>
+    	
+    	{%highlight css linenos%}
+        div {
+    	   display: inline;
+        }
+        div {
+    	   display: inline-block;
+        }
+        div {
+            display: block;
+        }
+        div {
+            display: none;
+        }
+    	{%endhighlight%}
 
-    <p>HTML elements will be considered either a block-level element, or an inline-element by default.</p>  
+        <p>HTML elements will be considered either a block-level element, or an inline-element by default.</p>  
 
-    <p>The most commonly used <a href="https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements"><strong>block-level elements</strong></a> are <code>div | p | pre | ul, ol | form | section | article</code></p>
+        <p>The most commonly used <a href="https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements"><strong>block-level elements</strong></a> are <code>div | p | pre | ul, ol | form | section | article</code></p>
 
-    <p>The most commonly used <a href="https://developer.mozilla.org/en-US/docs/HTML/Inline_elements"><strong>inline elements</strong></a> are <code>a | span | i | input | select | label</code>.</p>
+        <p>The most commonly used <a href="https://developer.mozilla.org/en-US/docs/HTML/Inline_elements"><strong>inline elements</strong></a> are <code>a | span | i | input | select | label</code>.</p>
 
-    <div class="well">
-        <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;View a full list of the available display properties and their behaviors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">here</a></small>
+        <div class="well">
+            <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;View a full list of the available display properties and their behaviors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">here</a></small>
+        </div>
+
+        <br />
+
+        <h3 class="sub-title">Inline vs. Inline Block</h3>
+
+        <p>An inline-block element is placed as an inline element (on the same line as adjacent content), but it behaves as a block element.  An inline block element can accept width &amp; height properties, but an inline element cannot.</p>
+
+        <br />
+
+        <h3 class="sub-title">Block vs. Inline-Block</h3>
+
+        <p>I like to think of the display property as the first specification to building a custom lego set.  You specify the properties, size and color of your pieces, then organize them on a web page in any way you see fit.  The starting point for specifying the properties of one of your leggos pieces is what type of display you want it to have.</p>
+
+        <br />
+
+        <h4>Block</h4>
+
+        <p><strong>display:block</strong> will create a block-level element that does not allow other elements to the left or right of it by default when rendered on the page.  A block-level element will generate whitespace at the top &amp; bottom of itself causing another element to be forced to start on a new line.</p>
+
+        {%highlight css linenos%}
+        .box {
+           display: block;
+           width:50px;
+           height:50px;
+           border:1px solid #39F;
+        }
+        {%endhighlight%}
+
+        {% highlight html linenos %}
+          <!DOCTYPE html>
+          <html>
+            <head>
+                <title>CSS Lunch and Learn</title>
+            </head>
+            <body>
+              <div class="box"></div>
+              <div class="box"></div>
+            </body>
+          </html>
+        {% endhighlight %}
+
+        <strong>The Result:</strong>
+
+        <iframe src="{{ site.baseurl }}/lessons/dis-pos/block.html"></iframe>
+
+        <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/block.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+        <br />
+
+        <h4>Inline-Block</h4>
+
+        <p><strong>display:inline-block</strong> will create an inline element that allows other elements to the left or right of it by default when rendered on the page.  An inline-block element can accept arguments for width and height.</p>
+
+        {%highlight css linenos%}
+        .box {
+           display: inline-block;
+           width:50px;
+           height:50px;
+           border:1px solid #39F;
+        }
+        {%endhighlight%}
+
+        {% highlight html linenos %}
+          <!DOCTYPE html>
+          <html>
+            <head>
+                <title>CSS Lunch and Learn</title>
+            </head>
+            <body>
+              <div class="box"></div>
+              <div class="box"></div>
+            </body>
+          </html>
+        {% endhighlight %}
+
+        <strong>The Result:</strong>
+
+        <iframe src="{{ site.baseurl }}/lessons/dis-pos/inline-block.html"></iframe>
+
+        <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/inline-block.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+        <br />
+
+        <h4>Inline</h4>
+
+        <p><strong>display:inline</strong> will create an inline element that allows other elements to the left or right of it by default when rendered on the page.  An inline element does NOT accept arguments for width and height.</p>
+
+        {%highlight css linenos%}
+        .box {
+           display: inline;
+           width:50px;
+           height:50px;
+           border:1px solid #39F;
+        }
+        {%endhighlight%}
+
+        {% highlight html linenos %}
+          <!DOCTYPE html>
+          <html>
+            <head>
+                <title>CSS Lunch and Learn</title>
+            </head>
+            <body>
+              <div class="box"></div>
+              <div class="box"></div>
+            </body>
+          </html>
+        {% endhighlight %}
+
+        <strong>The Result:</strong>
+
+        <iframe src="{{ site.baseurl }}/lessons/dis-pos/inline.html"></iframe>
+
+        <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/inline.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
+
+        <br />
+
+        <h4>None</h4>
+
+        <p><strong>display:none</strong> will completely hide an element from the viewport.  None of its properties will effect the DOM until it is turned on again to one of the other display properties.</p>
+
+        {%highlight css linenos%}
+        .box {
+           display: none;
+           width:50px;
+           height:50px;
+           border:1px solid #39F;
+        }
+        {%endhighlight%}
+
+        <div class="well">
+            <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;View a full list of the available display properties and their behaviors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">here</a></small>
+        </div>
+
+        <h4>Resources:</h4>
+
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">https://developer.mozilla.org/en-US/docs/Web/CSS/display</a>
+            </li>
+            <li>
+                <a href="http://stackoverflow.com/questions/8969381/what-is-the-difference-between-display-inline-and-display-inline-block">http://stackoverflow.com/questions/8969381/what-is-the-difference-between-display-inline-and-display-inline-block</a> - Answer 2
+            </li>
+            <li>
+                <a href="http://designshack.net/articles/css/whats-the-deal-with-display-inline-block/">http://designshack.net/articles/css/whats-the-deal-with-display-inline-block/</a>
+            </li>
+            <li>
+                <a href="http://css-tricks.com/almanac/properties/d/display/">http://css-tricks.com/almanac/properties/d/display/</a>
+            </li>
+        </ul>
+    </div><!-- .lesson -->
+
+    <div class="lesson">
+        <h2 class="title">The Position Property</h2>
+
+        <p>The CSS positioning properties allow you to position an element. It can also place an element behind another, and specify what should happen when an element's content is too big.</p>
+
+        <p>Elements can be positioned using the top, bottom, left, and right properties. However, these properties will not work unless the position property is set first. They also work differently depending on the positioning method.</p>
+
+        <p>There are four different positioning methods.</p>
+
+        <p><strong>Static</strong> - HTML elements are positioned static by default. A static positioned element is always positioned according to the normal flow of the page.</p>
+
+        <p>Static positioned elements are not affected by the top, bottom, left, and right properties.</p>
+
+        <p><strong>Relative</strong> - A relative positioned element is positioned relative to its normal position.  The content of relatively positioned elements can be moved and overlap other elements, but the reserved space for the element is still preserved in the normal flow.</p>
+
+        <p>Relatively positioned elements are often used as container blocks for absolutely positioned elements.</p>
+
+        <p><strong>Absolute</strong> - An absolute position element is positioned relative to the first parent element that has a position other than static. If no such element is found, the containing block is <code>&lt;html&gt;</code></p>
+
+        <p><strong>Fixed</strong> - An element with fixed position is positioned relative to the browser window.  It will not move even if the window is scrolled</p>
+
+        <h4>Resources:</h4>
+
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">https://developer.mozilla.org/en-US/docs/Web/CSS/position</a>
+            </li>
+            <li>
+                <a href="http://www.w3schools.com/css/css_positioning.asp">http://www.w3schools.com/css/css_positioning.asp</a>
+            </li>
+            <li>
+                <a href="http://alistapart.com/article/css-positioning-101/">http://alistapart.com/article/css-positioning-101/</a>
+            </li>
+            <li>
+                <a href="http://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/">http://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/</a>
+            </li>
+        </ul>
     </div>
-
-    <br />
-
-    <h3 class="sub-title">Inline vs. Inline Block</h3>
-
-    <p>An inline-block element is placed as an inline element (on the same line as adjacent content), but it behaves as a block element.  An inline block element can accept width &amp; height properties, but an inline element cannot.</p>
-
-    <br />
-
-    <h3 class="sub-title">Block vs. Inline-Block</h3>
-
-    <p>I like to think of the display property as the first specification to building a custom lego set.  You specify the properties, size and color of your pieces, then organize them on a web page in any way you see fit.  The starting point for specifying the properties of one of your leggos pieces is what type of display you want it to have.</p>
-
-    <br />
-
-    <h4>Block</h4>
-
-    <p><strong>display:block</strong> will create a block-level element that does not allow other elements to the left or right of it by default when rendered on the page.  A block-level element will generate whitespace at the top &amp; bottom of itself causing another element to be forced to start on a new line.</p>
-
-    {%highlight css linenos%}
-    .box {
-       display: block;
-       width:50px;
-       height:50px;
-       border:1px solid #39F;
-    }
-    {%endhighlight%}
-
-    {% highlight html linenos %}
-      <!DOCTYPE html>
-      <html>
-        <head>
-            <title>CSS Lunch and Learn</title>
-        </head>
-        <body>
-          <div class="box"></div>
-          <div class="box"></div>
-        </body>
-      </html>
-    {% endhighlight %}
-
-    <strong>The Result:</strong>
-
-    <iframe src="{{ site.baseurl }}/lessons/dis-pos/block.html"></iframe>
-
-    <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/block.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
-
-    <br />
-
-    <h4>Inline-Block</h4>
-
-    <p><strong>display:inline-block</strong> will create an inline element that allows other elements to the left or right of it by default when rendered on the page.  An inline-block element can accept arguments for width and height.</p>
-
-    {%highlight css linenos%}
-    .box {
-       display: inline-block;
-       width:50px;
-       height:50px;
-       border:1px solid #39F;
-    }
-    {%endhighlight%}
-
-    {% highlight html linenos %}
-      <!DOCTYPE html>
-      <html>
-        <head>
-            <title>CSS Lunch and Learn</title>
-        </head>
-        <body>
-          <div class="box"></div>
-          <div class="box"></div>
-        </body>
-      </html>
-    {% endhighlight %}
-
-    <strong>The Result:</strong>
-
-    <iframe src="{{ site.baseurl }}/lessons/dis-pos/inline-block.html"></iframe>
-
-    <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/inline-block.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
-
-    <br />
-
-    <h4>Inline</h4>
-
-    <p><strong>display:inline</strong> will create an inline element that allows other elements to the left or right of it by default when rendered on the page.  An inline element does NOT accept arguments for width and height.</p>
-
-    {%highlight css linenos%}
-    .box {
-       display: inline;
-       width:50px;
-       height:50px;
-       border:1px solid #39F;
-    }
-    {%endhighlight%}
-
-    {% highlight html linenos %}
-      <!DOCTYPE html>
-      <html>
-        <head>
-            <title>CSS Lunch and Learn</title>
-        </head>
-        <body>
-          <div class="box"></div>
-          <div class="box"></div>
-        </body>
-      </html>
-    {% endhighlight %}
-
-    <strong>The Result:</strong>
-
-    <iframe src="{{ site.baseurl }}/lessons/dis-pos/inline.html"></iframe>
-
-    <p><a target="_blank" href="{{ site.baseurl }}/lessons/dis-pos/inline.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
-
-    <br />
-
-    <h4>None</h4>
-
-    <p><strong>display:none</strong> will completely hide an element from the viewport.  None of its properties will effect the DOM until it is turned on again to one of the other display properties.</p>
-
-    {%highlight css linenos%}
-    .box {
-       display: none;
-       width:50px;
-       height:50px;
-       border:1px solid #39F;
-    }
-    {%endhighlight%}
-
-    <div class="well">
-        <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;View a full list of the available display properties and their behaviors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">here</a></small>
-    </div>
-
-    <h4>Resources:</h4>
-
-    <ul>
-        <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">https://developer.mozilla.org/en-US/docs/Web/CSS/display</a>
-        </li>
-        <li>
-            <a href="http://stackoverflow.com/questions/8969381/what-is-the-difference-between-display-inline-and-display-inline-block">http://stackoverflow.com/questions/8969381/what-is-the-difference-between-display-inline-and-display-inline-block</a> - Answer 2
-        </li>
-        <li>
-            <a href="http://designshack.net/articles/css/whats-the-deal-with-display-inline-block/">http://designshack.net/articles/css/whats-the-deal-with-display-inline-block/</a>
-        </li>
-        <li>
-            <a href="http://css-tricks.com/almanac/properties/d/display/">http://css-tricks.com/almanac/properties/d/display/</a>
-        </li>
-    </ul>
-
-    <br />
-    <hr />
-    <br />
-
-    <h2 class="title">The Position Property</h2>
-
-    <p>The CSS positioning properties allow you to position an element. It can also place an element behind another, and specify what should happen when an element's content is too big.</p>
-
-    <p>Elements can be positioned using the top, bottom, left, and right properties. However, these properties will not work unless the position property is set first. They also work differently depending on the positioning method.</p>
-
-    <p>There are four different positioning methods.</p>
-
-    <p><strong>Static</strong> - HTML elements are positioned static by default. A static positioned element is always positioned according to the normal flow of the page.</p>
-
-    <p>Static positioned elements are not affected by the top, bottom, left, and right properties.</p>
-
-    <p><strong>Relative</strong> - A relative positioned element is positioned relative to its normal position.  The content of relatively positioned elements can be moved and overlap other elements, but the reserved space for the element is still preserved in the normal flow.</p>
-
-    <p>Relatively positioned elements are often used as container blocks for absolutely positioned elements.</p>
-
-    <p><strong>Absolute</strong> - An absolute position element is positioned relative to the first parent element that has a position other than static. If no such element is found, the containing block is <code>&lt;html&gt;</code></p>
-
-    <p><strong>Fixed</strong> - An element with fixed position is positioned relative to the browser window.  It will not move even if the window is scrolled</p>
-
-    <h4>Resources:</h4>
-
-    <ul>
-        <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">https://developer.mozilla.org/en-US/docs/Web/CSS/position</a>
-        </li>
-        <li>
-            <a href="http://www.w3schools.com/css/css_positioning.asp">http://www.w3schools.com/css/css_positioning.asp</a>
-        </li>
-        <li>
-            <a href="http://alistapart.com/article/css-positioning-101/">http://alistapart.com/article/css-positioning-101/</a>
-        </li>
-    </ul>
 </div>
