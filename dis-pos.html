@@ -175,6 +175,35 @@ title: Display & Position
             <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;View a full list of the available display properties and their behaviors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">here</a></small>
         </div>
 
+        <h4>display:none vs. visibility:hidden</h4>
+
+        <p>There are serious differences between the behavior of both of these statements, even though the result you see in your browser is the same.  One of the most notable differences is the effect on accessibility.  A screen reader will not be able to access the contents of a div who has been hidden with <code>display:none</code>, because the element is hidden from the DOM all together.  However, <code>visibility:hidden</code> will keep the contents of those elements in the DOM, but hide their effects from the rest of the web page.</p>
+
+        {%highlight css linenos%}
+        .hidden {
+           visibility:hidden;
+        }
+        .none {
+            display:none;
+        }
+        {%endhighlight%}
+
+        <br />
+
+        <h4>visibility:hidden vs. opcacity:0</h4>
+
+        <p>The other alternative to hiding content from the DOM and user is to use the <code>opacity</code> property.  Opcaity effects the alpha channel of web page content, with a value ranging from <code>1 - 0</code>.  So something that is partly visible would have opacity declared like this:</p>
+
+        {%highlight css linenos%}
+        .peekaboo {
+            opacity:.25;
+        }
+        {%endhighlight%}
+
+        <p>The previous element would be 25% visible to the client.</p>
+
+        <br />
+
         <h4>Resources:</h4>
 
         <ul>
