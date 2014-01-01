@@ -23,106 +23,121 @@ title: Introduction to CSS
 <h1>Introduction to Cascading Style Sheets</h1>
 
 <div class="col-md-12 wrapper shadow-med">
-    
-    <br />
+    <div id="introduction" class="lesson">
+        <h3>What is CSS?</h3>
 
-    <h3>What is CSS?</h3>
+        <p>CSS is a style sheet language used for describing the presentation semantics (the look and formatting) of a document written in markup language.  It's most common application is to style web pages written in HTML and XHTML, but the language can also be applied to any kind of XML document, including plain XML, SVG, and XUL.</p>
 
-    <p>CSS is a style sheet language used for describing the presentation semantics (the look and formatting) of a document written in markup language.  It's most common application is to style web pages written in HTML and XHTML, but the language can also be applied to any kind of XML document, including plain XML, SVG, and XUL.</p>
+        <hr />
 
-    <hr />
+        <h3>Why use CSS?</h3>
 
-    <h3>Why use CSS?</h3>
+        <p>CSS was developed back in 1996 to provide a separation of concerns from information content &amp; details of how to display it.</p>
 
-    <p>CSS was developed back in 1996 to provide a separation of concerns from information content &amp; details of how to display it.</p>
+        <p>There are no real alternatives to CSS, but there are many tools which have found ways to improve on certain aspects of the CSS coding practices.  The end result will always be produced as plain old CSS, but alternatives like <a href="http://lesscss.org">LESS CSS</a> can let you be more productive when writing your code.</p>
 
-    <p>There are no real alternatives to CSS, but there are many tools which have found ways to improve on certain aspects of the CSS coding practices.  The end result will always be produced as plain old CSS, but alternatives like <a href="http://lesscss.org">LESS CSS</a> can let you be more productive when writing your code.</p>
+        <hr />
 
-    <hr />
+        <h3>How to use CSS</h3>
 
-    <h3>How to use CSS</h3>
+        <p>There are three specific ways to add CSS to the elements of your document.</p>
 
-    <p>There are three specific ways to add CSS to the elements of your document.</p>
+        <br />
 
-    <br />
+        <h4>Method 1: Use an External Stylesheet</h4>
 
-    <h4>Method 1: Use an External Stylesheet</h4>
+        <p>This method involves adding a reference to an external document with the <code>.css</code> extension in the <code>&lt;head&gt;</code> of your document using the <code>&lt;link&gt;</code> tag.</p>
 
-    <p>This method involves adding a reference to an external document with the <code>.css</code> extension in the <code>&lt;head&gt;</code> of your document using the <code>&lt;link&gt;</code> tag.</p>
+        <strong>Example:</strong>
 
-    <strong>Example:</strong>
+        {% highlight html linenos %}
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>CSS Lunch and Learn</title>
+            <link rel="stylesheet" type="text/css" href="css/style.css">
+        </head>
+        <body>
+            <p>Hello World!</p>
+        </body>
+        </html>
+        {% endhighlight %}
 
-    {% highlight html linenos %}
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>CSS Lunch and Learn</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
-    <body>
-        <p>Hello World!</p>
-    </body>
-    </html>
-    {% endhighlight %}
+        <br />
 
-    <br />
+        <h4>Method 2: Internal Style Sheet</h4>
 
-    <h4>Method 2: Internal Style Sheet</h4>
+        <p>An internal stylesheet, is when you wrap a block of CSS declarations in a <code>&lt;style&gt;</code> tag inside the <code>&lt;head&gt;</code> of a document.</p>
 
-    <p>An internal stylesheet, is when you wrap a block of CSS declarations in a <code>&lt;style&gt;</code> tag inside the <code>&lt;head&gt;</code> of a document.</p>
+        <strong>Example:</strong>
 
-    <strong>Example:</strong>
+        {% highlight html linenos %}
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>CSS Lunch and Learn</title>
+            <style type="text/css">
+            body {
+                background:#39F;
+                font-family:Arial;
+            }
+            p {
+                font-size:14px;
+            }
+            </style>
+        </head>
+        <body>
+            <p>Hello World!</p>
+        </body>
+        </html>
+        {% endhighlight %}
 
-    {% highlight html linenos %}
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>CSS Lunch and Learn</title>
-        <style type="text/css">
-        body {
-            background:#39F;
-            font-family:Arial;
-        }
-        p {
-            font-size:14px;
-        }
-        </style>
-    </head>
-    <body>
-        <p>Hello World!</p>
-    </body>
-    </html>
-    {% endhighlight %}
+        <br />
 
-    <br />
+        <h4>Method 3: Inline Styles</h4>
 
-    <h4>Method 3: Inline Styles</h4>
+        <p>Inline styles are styles added directly to the element that you are trying to style, in the HTML document itself.  The styles are collected into a <code>style</code> attribute</p>
 
-    <p>Inline styles are styles added directly to the element that you are trying to style, in the HTML document itself.  The styles are collected into a <code>style</code> attribute</p>
+        <strong>Example:</strong>
 
-    <strong>Example:</strong>
+        {% highlight html linenos %}
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>CSS Lunch and Learn</title>
+        </head>
+        <body style="background-color:#39F; font-family:Arial;">
+            <p style="font-size:14px">Hello World!</p>
+        </body>
+        </html>
+        {% endhighlight %}
 
-    {% highlight html linenos %}
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>CSS Lunch and Learn</title>
-    </head>
-    <body style="background-color:#39F; font-family:Arial;">
-        <p style="font-size:14px">Hello World!</p>
-    </body>
-    </html>
-    {% endhighlight %}
+        <div class="well">
+            <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;For a more detailed introduction to to including styles in your HTML documents, read the <a href="http://www.w3schools.com/css/css_howto.asp">W3Schools article</a></small>
+        </div>
 
-    <div class="well">
-        <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;For a more detailed introduction to to including styles in your HTML documents, read the <a href="http://www.w3schools.com/css/css_howto.asp">W3Schools article</a></small>
-    </div>
+        <p>Working with CSS can be a real joy, and offers you a whole world of possibilities when it comes to formatting information in a creative fashion.  Being smart with how you write your CSS enables you to be more productive, with a lighter footprint in your code.</p>
 
-    <p>Working with CSS can be a real joy, and offers you a whole world of possibilities when it comes to formatting information in a creative fashion.  Being smart with how you write your CSS enables you to be more productive, with a lighter footprint in your code.</p>
+    </div><!-- .lesson #introduction -->
 
-    <!--##############################
-        SELECTORS
-        ##############################-->
+    <div id="box-model" class="lesson">
+        <h3 class="title">Box Model</h3>
+
+        <p>Everything on a web page is a box.  Whether square or rectangular, every element you see on a web page has an aspect we refer to as the <code>box-model</code>.  I tend to think of the elements similar to a set of infinitely customizable leggos, where you define their color, length, width, and position.</p>
+
+        <h4>Resources:</h4>
+        <ul>
+            <li>
+                <a href="http://css-tricks.com/the-css-box-model/">http://css-tricks.com/the-css-box-model/</a>
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box_model">https://developer.mozilla.org/en-US/docs/Web/CSS/box_model</a>
+            </li>
+            <li>
+                <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">http://www.paulirish.com/2012/box-sizing-border-box-ftw/</a>
+            </li>
+        </ul>
+    </div><!-- .lesson #box-model -->
 
     <div id="element-selectors" class="lesson">
     	<h3 class="title">Element Selectors</h3>
@@ -193,7 +208,7 @@ title: Introduction to CSS
         <p>We used the most basic of selectors, the element selector, to select the parts of the page we wanted to style, and then applied some styling declarations to those selectors to create a desired result. Although this works well for styling elements, we would quickly run out of presentation options, and our designs would be pretty plain.</p>
 
         <p>Unless you are building a very simple web page, you generally want to avoid targeting elements, and instead target a wrapping class or ID, and then drill down to the element you are wanting to manipulate.</p>        
-    </div>
+    </div><!-- .lesson #element-selectors -->
 
     <div id="class-id" class="lesson">
         <h3 class="title">Class &amp; ID Selectors</h3>
