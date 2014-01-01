@@ -124,27 +124,27 @@ title: Introduction to CSS
         SELECTORS
         ##############################-->
 
-    <div id="selectors" class="lesson">
-    	<h3 class="title">Selectors</h3>
+    <div id="element-selectors" class="lesson">
+    	<h3 class="title">Element Selectors</h3>
 
-        <p>CSS Selector do exactly as the name describes.  They <em>select</em> an element from a web page and manipulate it's presentation by adding properties to that selection.</p>
+        <p>CSS Element Selectors do exactly as the name describes.  They <em>select</em> an element from a web page and manipulate it's presentation by adding properties to that selection.</p>
 
     	<p>We will start with some plain basic HTML, with six selectable elements - <code>html | body | div | h1 | p | a</code></p>
 
     	{% highlight html linenos %}
-      <!DOCTYPE html>
-      <html>
-        <head>
-            <title>CSS Lunch and Learn</title>
-        </head>
-        <body>
-          <div>
-            <h1>Heading</h1>
-            <p>Paragraph</p>
-            <a href="#">Link</a>
-          </div>
-        </body>
-      </html>
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>CSS Lunch and Learn</title>
+            </head>
+            <body>
+                <div>
+                    <h1>Heading</h1>
+                    <p>Paragraph</p>
+                    <a href="#">Link</a>
+                </div>
+            </body>
+        </html>
     	{% endhighlight %}
 
         <strong>The Result:</strong>
@@ -154,7 +154,6 @@ title: Introduction to CSS
     	<p><a target="_blank" href="{{ site.baseurl }}/lessons/intro/default-html.html" class="pull-right"><strong>View the result</strong>&nbsp;<i class="glyphicon glyphicon-circle-arrow-right"></i></a></p>
 
     	<br />
-    	<hr />
 
     	<strong>Now lets style our example HTML with some basic CSS selectors:</strong>
 
@@ -168,7 +167,7 @@ title: Introduction to CSS
         	background-color:#eee;
         }
         h1, p, a {
-            font-family:Arial;
+            line-height:1.2;
         }
         h1 {
         	margin-bottom:15px;
@@ -193,11 +192,11 @@ title: Introduction to CSS
 
         <p>We used the most basic of selectors, the element selector, to select the parts of the page we wanted to style, and then applied some styling declarations to those selectors to create a desired result. Although this works well for styling elements, we would quickly run out of presentation options, and our designs would be pretty plain.</p>
 
-        <p>Unless you are building a very simple web page, you generally want to avoid targeting elements, and instead target a wrapping class or ID, and then drill down to the element you are wanting to manipulate.</p>
+        <p>Unless you are building a very simple web page, you generally want to avoid targeting elements, and instead target a wrapping class or ID, and then drill down to the element you are wanting to manipulate.</p>        
+    </div>
 
-        <br />
-
-        <h4 class="title">Classes &amp; IDs to the rescue</h4>
+    <div id="class-id" class="lesson">
+        <h3 class="title">Class &amp; ID Selectors</h3>
         <p>CSS allows you to specify your own semantic selectors with the Class &amp; ID system.</p>
 
         <strong>HTML with Classes &amp; IDs added:</strong>
@@ -259,13 +258,9 @@ title: Introduction to CSS
         }
         {% endhighlight %}
 
-        <p>The problem with that solution is now we have isolated all <code>&lt;h1&gt;</code> tags that may appear under the <code>.wrapper</code> div and atrgeted for that style.  Aside from the SEO issues from using multiple <code>&lt;h1&gt;</code> tags on a page, you never want to target an element by it's tag name unless you are absolutely positive that the design calls for that behavior, and no other elements will be effected further down the line.</p>
+        <p>The potential problem with that solution is now we have isolated all <code>&lt;h1&gt;</code> tags that may appear under the <code>.wrapper</code> div and atrgeted for that style.  Aside from the SEO issues from using multiple <code>&lt;h1&gt;</code> tags on a page, you never want to target an element by it's tag name unless you are absolutely positive that the design calls for that behavior, and no other elements will be effected further down the line.</p>
 
         <p>Using two class names has a higher specificity than a class selector and an element selector, a topic we will cover further down the page.</p>
-
-        <hr />
-
-        
     </div>
 
     <div id="pseudo" class="lesson">
@@ -293,10 +288,29 @@ title: Introduction to CSS
         }
         {% endhighlight %}
 
-        <div class="well">
-            <small><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;For a more comprehensive look at Classes, IDs, Selectors &amp; Psuedo-Selectors view the <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors">MDN article</a>. You can also look at an exhaustive list of selectors over on <a href="http://quirksmode.org/css/selectors/">Quirksmode</a></small>
-        </div>
+        <br />
+
+        <h4>Resources:</h4>
+
+        <ul>
+            <li>
+                <a href="http://www.w3.org/TR/CSS2/selector.html">http://www.w3.org/TR/CSS2/selector.html</a>
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors">https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors</a>
+            </li>
+            <li>
+                <a href="http://quirksmode.org/css/selectors/">http://quirksmode.org/css/selectors/</a>
+            </li>
+            <li>
+                <a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/">http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/</a>
+            </li>
+        </ul>
     </div>
+
+    <!--##############################
+        SPECIFICITY
+        ##############################-->
 
     <div id="specificity" class="lesson">
         <h3 class="title">Specificity</h3>
@@ -397,11 +411,12 @@ title: Introduction to CSS
 
         <br />
 
-        <p>Here are some great specificity resources:</p>
+        <h4>Resources:</h4>
+
         <ul>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank"><b>MDN</b> Specificity</a></li>
-            <li><a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/"><b>Smashing Magazine</b> CSS Specificity: Things You Should Know</a></li>
-            <li><a href="http://css-tricks.com/specifics-on-css-specificity/"><strong>CSS-Tricks</strong> Specifics on CSS Specificity</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity</a></li>
+            <li><a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/">http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/</a></li>
+            <li><a href="http://css-tricks.com/specifics-on-css-specificity/">http://css-tricks.com/specifics-on-css-specificity/</a></li>
         </ul>
 
         <hr />
