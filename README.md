@@ -14,13 +14,6 @@ Once the installation has finished, navigate to the project directory in a comma
 	
 	bundle install 
 
----
-
-##### Note 
-If you are on Linux or OSX, you do not need the [WDM](http://rubygems.org/gems/wdm) gem.  This is necessary for Windows only.  If you don't need this open the Gemfile at the root of the project and remove line 3.
-
----
-
 Once everything has finished installing, you are ready to view the project.
 
 Execute `jekyll serve -w` in the project root to build your project and serve it to http://localhost:4000/lunch-and-learn/
@@ -28,3 +21,10 @@ Execute `jekyll serve -w` in the project root to build your project and serve it
 Notice using the `jekyll serve` with the `-w` flag will 'watch' the directory for changes, allowing you to develop your app without having to recompile after your changes.
 
 Happy coding!
+
+---
+
+##### Note 
+If you are on Linux or OSX, you do not need the [WDM](http://rubygems.org/gems/wdm) gem.  This is necessary for Windows only.  If you don't need this open the Gemfile at the root of the project and remove line 3.
+
+---
