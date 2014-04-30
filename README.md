@@ -26,4 +26,5 @@ Happy coding!
 ##### Note 
 
 If you are on Linux or OSX, you do not need the [WDM](http://rubygems.org/gems/wdm) gem.  This is necessary for Windows only.  If you don't need this open the Gemfile at the root of the project and remove line 3.
+
 ---
