@@ -1,6 +1,6 @@
 #CSS Lunch & Learn
 
-[View Project Website](http://stat30fbliss.github.io/lunch-and-learn/)
+[View Project Website](http://robabby.github.io/lunch-and-learn/)
 
 This project is focused on educating the basics of CSS.  The project currently includes three pages focused on introducing certain aspects of CSS, and finishes with building a navigation bar.
 
