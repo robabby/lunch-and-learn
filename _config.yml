@@ -1,4 +1,4 @@
 name: CSS Lunch and Learn
-markdown: redcarpet
-pygments: true
+# markdown: redcarpet
+# highlighter: null
 baseurl: /lunch-and-learn
